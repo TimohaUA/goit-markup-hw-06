@@ -900,6 +900,7 @@ padding: 40px;
   top: 8px;
   right: 8px;
   height: 30px;
+  width: 30px;
 
   border-radius: 50%;
   background: #ffffff;
@@ -913,9 +914,18 @@ padding: 40px;
   justify-content: center;
 }
 
-.btn_close>svg{
-  width: 18px;
-  height: 18px;
+.close{
+  width: 11px;
+  height: 11px;
+
+    transition-property: fill;
+    transition-duration: var(--transition-time);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn_close:hover, .btn_close:hover .close{
+  fill: var(--main-color-hover);
+  cursor: pointer;
 }
 
 .modal_window>h2{
@@ -964,17 +974,14 @@ height: 138px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input:hover{
-border: 1px solid var(--main-color-hover);
-cursor: pointer;
-}
-
-.input:focus-visible {
+.input:hover, .input:focus {
   border: 1px solid var(--main-color-hover);
   cursor: pointer;
+  outline: none;
 }
 
-.input:hover + .input_icon{    
+.input:hover + .input_icon,
+.input:focus+.input_icon{    
   fill: var(--main-color-hover);
 }
 
@@ -1072,10 +1079,19 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
   color: #ffffff;
   
-  background: var(--main-color-hover);
+  background-color: var(--main-color-hover);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+
+  transition-property: background-color;
+  transition-duration: var(--transition-time);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit_btn:hover{
+background-color: #188CE8;
+cursor: pointer;
 }
 
 .is-hidden {  
